@@ -12,6 +12,10 @@ table {
 	width: 100%;
 }
 
+section {
+	margin: 50px;
+}
+
 #burgerchoice {
 	background: black;
 	color: white;
