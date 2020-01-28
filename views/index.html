@@ -81,7 +81,7 @@
             </p>
             <p>
                 <label for="apartment">Apartment</label><br>
-                <input type="number" id="apartment" name="ap" required="required"> 
+                <input type="number" min="0" id="apartment" name="ap" required="required"> 
             </p>
             <p>
                 <label for="recipient">Recipient</label><br />
@@ -91,6 +91,15 @@
                     <option>Invoice</option>
                     <option>Klarna</option>
                 </select>
+            </p>
+            <p>
+                Gender<br>
+                <input type="radio" id="male" name="gm" checked>
+                <label for male>Male</label>
+                <input type="radio" id="female" name="gf">
+                <label for male>Female</label>
+                <input type="radio" id="other" name="go">
+                <label for male>Other</label>
             </p>
         </section>
         <footer>
