@@ -67,6 +67,7 @@
         <section>
             <h3>Customer info</h3>
             <p> Please fill in your payment and shipment info</p>
+            <form>
             <p>
                 <label for="fullname">Full name</label><br>
                 <input type="text" id="fullname" name="fn" required="required" placeholder="Your name here"> 
@@ -94,13 +95,12 @@
             </p>
             <p>
                 Gender<br>
-                <input type="radio" id="male" name="gm" checked>
-                <label for male>Male</label>
-                <input type="radio" id="female" name="gf">
-                <label for male>Female</label>
-                <input type="radio" id="other" name="go">
-                <label for male>Other</label>
+                <input type="radio" id="male" name="gender" value="male" checked>Male<br>
+                <input type="radio" id="female" name="gender" value="female">Female<br>
+                <input type="radio" id="other" name="gender" value="other">Other
             </p>
+            </form>
+            <button type="submit"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
         </section>
         <footer>
             This is a footer
