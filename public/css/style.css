@@ -8,6 +8,10 @@ body {
 	font-weight: bold;
 }
 
+table {
+	width: 100%;
+}
+
 #burgerchoice {
 	background: black;
 	color: white;
