@@ -6,15 +6,34 @@ body {
 
 header img {
 	opacity: 0.5;
+	width: 100%;
+	height: auto;
 }
 
 header {
-	height: 400px;
+	height: 500px;
 	margin: 50px;
+	overflow:hidden;
+}
+
+header h1 {
+	padding: 100px;
+	opacity: 1;
+	position: absolute;
 }
 
 .allergies {
 	font-weight: bold;
+}
+
+.wrapper {
+	display:grid;
+	grid-template-columns: 400px 400px 400px;	
+	grid-gap: 20px;
+}
+
+.box {
+	text-align: center;
 }
 
 table {
