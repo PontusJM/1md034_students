@@ -16,13 +16,20 @@ section {
 	margin: 50px;
 }
 
+#submitbutton {
+	margin: 20px;
+}
+
 #burgerchoice {
+	padding: 20px;
+	border: 4px dashed white;
 	background: black;
 	color: white;
 }
 
 #customerinfo {
-
+	padding: 20px;
+	border: 4px dashed black;
 }
 
 button:hover {
