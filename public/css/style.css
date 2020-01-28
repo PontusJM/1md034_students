@@ -4,6 +4,15 @@ body {
 	color: black;
 }
 
+header img {
+	opacity: 0.5;
+}
+
+header {
+	height: 400px;
+	margin: 50px;
+}
+
 .allergies {
 	font-weight: bold;
 }
