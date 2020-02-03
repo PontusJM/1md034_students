@@ -17,9 +17,32 @@ let mcBland = new menuItem('McBland',150, 'no','yes','https://www.mcdonalds.com/
 let mcBacon = new menuItem('McBland',1250,'yes','yes','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 let mcBigSalad = new menuItem('McBigSalad',120,'no','no','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 
-document.getElementById('burger1').innerHTML = mcBanger.burgerInfo();
-document.getElementById('burger2').innerHTML = mcFisker.burgerInfo();
-document.getElementById('burger3').innerHTML = mcBland.burgerInfo();
-document.getElementById('burger4').innerHTML = mcBacon.burgerInfo();
-document.getElementById('burger5').innerHTML = mcBigSalad.burgerInfo();
 
+let menu = [mcBanger,mcFisker,mcBland,mcBacon,mcBigSalad];
+
+let burgerList = document.getElementById('burgerList');
+for (var burger of menu) {
+	let listItem = document.createElement("li");
+  let allergeneInfo = " ";
+  if(burger.gluten == 'no'){
+  	allergeneInfo += "Gluten Free ";
+  }
+  if(burger.lactose == 'no'){
+  	allergeneInfo += "Lactose Free";
+  }
+  
+  let listValue = document.createTextNode(burger.burgerInfo() + allergeneInfo);
+  listItem.appendChild(listValue);
+  burgerList.appendChild(listItem);
+}
+
+const vm = new Vue({
+	el: '#myID',
+  data: {
+  mcBanger: mcBanger.burgerInfo(),
+  mcFisker: mcFisker.burgerInfo(),
+  mcBland: mcBland.burgerInfo(),
+  mcBacon: mcBacon.burgerInfo(),
+  mcBigSalad: mcBigSalad.burgerInfo()
+  }
+})

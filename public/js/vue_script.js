@@ -17,15 +17,11 @@ let mcBland = new menuItem('McBland',150, 'no','yes','https://www.mcdonalds.com/
 let mcBacon = new menuItem('McBland',1250,'yes','yes','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 let mcBigSalad = new menuItem('McBigSalad',120,'no','no','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 
+let menu = [mcBanger,mcFisker,mcBland,mcBacon,mcBigSalad];
 
 const vm = new Vue({
 	el: '#myID',
   data: {
-  mcBanger: mcBanger.burgerInfo(),
-  mcFisker: mcFisker.burgerInfo(),
-  mcBland: mcBland.burgerInfo(),
-  mcBacon: mcBacon.burgerInfo(),
-  mcBigSalad: mcBigSalad.burgerInfo()
+  	menu: menu
   }
 })
-
