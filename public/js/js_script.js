@@ -17,12 +17,9 @@ let mcBland = new menuItem('McBland',150, 'no','yes','https://www.mcdonalds.com/
 let mcBacon = new menuItem('McBland',1250,'yes','yes','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 let mcBigSalad = new menuItem('McBigSalad',120,'no','no','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 
-console.log(mcBanger.burgerInfo());
+document.getElementById('burger1').innerHTML = mcBanger.burgerInfo();
+document.getElementById('burger2').innerHTML = mcFisker.burgerInfo();
+document.getElementById('burger3').innerHTML = mcBland.burgerInfo();
+document.getElementById('burger4').innerHTML = mcBacon.burgerInfo();
+document.getElementById('burger5').innerHTML = mcBigSalad.burgerInfo();
 
-console.log(mcFisker.burgerInfo());
-
-console.log(mcBland.burgerInfo());
-
-console.log(mcBacon.burgerInfo());
-
-console.log(mcBigSalad.burgerInfo());
