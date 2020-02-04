@@ -17,32 +17,33 @@ let mcBland = new menuItem('McBland',150, 'no','yes','https://www.mcdonalds.com/
 let mcBacon = new menuItem('McBland',1250,'yes','yes','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 let mcBigSalad = new menuItem('McBigSalad',120,'no','no','https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg');
 
-
 let menu = [mcBanger,mcFisker,mcBland,mcBacon,mcBigSalad];
 
-let burgerList = document.getElementById('burgerList');
-for (var burger of menu) {
-	let listItem = document.createElement("li");
-  let allergeneInfo = " ";
-  if(burger.gluten == 'no'){
-  	allergeneInfo += "Gluten Free ";
-  }
-  if(burger.lactose == 'no'){
-  	allergeneInfo += "Lactose Free";
-  }
-  
-  let listValue = document.createTextNode(burger.burgerInfo() + allergeneInfo);
-  listItem.appendChild(listValue);
-  burgerList.appendChild(listItem);
-}
+let burgerList = document.getElementById('burgerlist');
 
-const vm = new Vue({
-	el: '#myID',
-  data: {
-  mcBanger: mcBanger.burgerInfo(),
-  mcFisker: mcFisker.burgerInfo(),
-  mcBland: mcBland.burgerInfo(),
-  mcBacon: mcBacon.burgerInfo(),
-  mcBigSalad: mcBigSalad.burgerInfo()
-  }
-})
+for(var burger of menu){
+	let burgerItem = document.createElement('div');
+	let image = document.createElement('img');
+	let name = document.createElement('h4');
+	name.appendChild(document.createTextNode(burger.name));
+	image.src = burger.image;
+	let infoList = document.createElement('ul');
+	let kcal = document.createElement('li');
+	kcal.appendChild(document.createTextNode(burger.kcal + " kCal"));
+	infoList.appendChild(kcal);
+	if(burger.gluten == 'no'){
+		let gluten = document.createElement('li');
+		gluten.appendChild(document.createTextNode("Gluten Free"));
+		infoList.appendChild(gluten);
+	}
+	if(burger.lactose == 'no'){
+		let lactose = document.createElement('li');
+		lactose.appendChild(document.createTextNode("Lactose Free"));
+		infoList.appendChild(lactose);
+	}
+
+	burgerItem.appendChild(image);
+	burgerItem.appendChild(name);
+	burgerItem.appendChild(infoList);
+	burgerList.appendChild(burgerItem);
+}

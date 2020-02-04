@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script src="https://vuejs.org/js/vue.js"></script>
-        <script src="js/js_script.js"></script> 
+        <script src="js/js_script.js" defer></script> 
         <script src="js/vue_script.js"></script> 
         <title>BurgerTown</title>
         <meta charset="utf-8"/>
@@ -17,37 +17,7 @@
         <section id="burgerchoice">
             <h3>Choose burger</h3>
             <p>Choose what burger you want to eat</p>
-            <div class="wrapper">
-                <div class="box a">
-                    <h4>McBanger</h4>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/RedDot_Burger.jpg" width="400" height="400">
-                    <ul>
-                        <li>Meat</li>
-                        <li>Bacon</li>
-                        <li>Tomatoes</li>
-                        <li class="allergies">Contains gluten</li>
-                    </ul>
-                </div>
-                <div class="box b">
-                    <h4>McFisker</h4>
-                    <img src = "https://sifu.unileversolutions.com/image/en-AU/recipe-topvisual/2/1260-709/crispy-fish-burger-with-jalapeno-tartare-sauce-50486970.jpg" width="400" height="400">
-                    <ul>
-                        <li>Fish</li>
-                        <li>Jalapeños</li>
-                        <li>Salad</li>
-                        <li class="allergies">Contains gluten</li>
-                    </ul>
-                </div>
-                <div class="box c">
-                    <h4>McBland</h4>
-                    <img src = "https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/hero/desktop/t-mcdonalds-Hamburger.jpg" width="400" height="400">
-                    <ul>                                
-                        <li>Meat</li>
-                        <li>Onions</li>
-                        <li>Ketcup</li>
-                        <li class="allergies">Gluten free</li>
-                    </ul>
-                </div>
+            <div id="burgerlist">
             </div>
         </section>
         <section id="customerinfo">

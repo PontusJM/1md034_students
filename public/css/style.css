@@ -26,15 +26,21 @@ header h1 {
 	font-weight: bold;
 }
 
-.wrapper {
+#burgerlist {
 	display:grid;
 	grid-template-columns: 400px 400px 400px;	
 	grid-gap: 20px;
 }
 
+#burgerlist div img {
+	width:400px;
+	height:400px;
+}
 .box {
 	text-align: center;
 }
+
+
 
 table {
 	width: 100%;
