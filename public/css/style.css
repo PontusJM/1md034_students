@@ -26,13 +26,13 @@ header h1 {
 	font-weight: bold;
 }
 
-#burgerlist {
+.burgerlist {
 	display:grid;
 	grid-template-columns: 400px 400px 400px;	
 	grid-gap: 20px;
 }
 
-#burgerlist div img {
+.burgerlist div img {
 	width:400px;
 	height:400px;
 }

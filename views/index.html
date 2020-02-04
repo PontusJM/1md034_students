@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script src="https://vuejs.org/js/vue.js"></script>
         <script src="js/js_script.js" defer></script> 
-        <script src="js/vue_script.js"></script> 
+        <script src="js/vue_script.js" defer></script> 
         <title>BurgerTown</title>
         <meta charset="utf-8"/>
     </head>
@@ -17,7 +17,22 @@
         <section id="burgerchoice">
             <h3>Choose burger</h3>
             <p>Choose what burger you want to eat</p>
-            <div id="burgerlist">
+            <div class="burgerlist" id="myID">
+                <div v-for="burger in menu">
+                    <img v-bind:src="burger.image">
+                    {{ burger.name }}
+                    <ul>
+                        <li>
+                           {{ burger.kcal }} kcal
+                        </li>
+                        <li v-if="burger.gluten == 'no'">
+                            Gluten Free
+                        </li>
+                        <li v-if="burger.lactose == 'no'">
+                            Lactose Free
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section id="customerinfo">
