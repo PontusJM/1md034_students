@@ -10,7 +10,7 @@
         <meta charset="utf-8"/>
     </head>
     <body>
-        <main>
+        <main id="myID">
             <header>
                 <h1>Welcome to BurgerTown</h1>
                 <img src="https://i.pinimg.com/originals/8a/ca/02/8aca0292562c45103b8b4d0f48409cce.jpg">
@@ -18,7 +18,7 @@
         <section id="burgerchoice">
             <h3>Choose burger</h3>
             <p>Choose what burger you want to eat</p>
-            <div class="burgerlist" id="myID">
+            <div class="burgerlist">
                 <div v-for="burger in menu">
                     <img v-bind:src="burger.img">
                     {{ burger.name }}
@@ -33,6 +33,7 @@
                             Lactose Free
                         </li>
                     </ul>
+                <input type="checkbox" id="burger.name" name="burgerSelect" v-bind:value="burger.name">
                 </div>
             </div>
         </section>
@@ -42,23 +43,23 @@
             <form>
             <p>
                 <label for="fullname">Full name</label><br>
-                <input type="text" id="fullname" name="fn" required="required" placeholder="Your name here"> 
+                <input v-model="fullname" type="text" id="fullname" name="fn" required="required" placeholder="Your name here"> 
             </p>
             <p>
                 <label for="email">Email</label><br>
-                <input type="email" id="email" name="em" required="required" placeholder="your@email.com"> 
+                <input v-model="email" type="email" id="email" name="em" required="required" placeholder="your@email.com"> 
             </p>
             <p>
                 <label for="street">Street</label><br>
-                <input type="text" id="street" name="st" required="required" placeholder="Your street name here"> 
+                <input v-model="street" type="text" id="street" name="st" required="required" placeholder="Your street name here"> 
             </p>
             <p>
                 <label for="apartment">Apartment</label><br>
-                <input type="number" min="0" id="apartment" name="ap" required="required"> 
+                <input v-model="apartment" type="number" min="0" id="apartment" name="ap" required="required"> 
             </p>
             <p>
                 <label for="recipient">Recipient</label><br />
-                <select id="recipient" name="rcp">
+                <select v-model="recipient" id="recipient" name="rcp">
                     <option selected="selected">Visa/Mastercard</option>
                     <option>Paypal</option>
                     <option>Invoice</option>
@@ -67,12 +68,21 @@
             </p>
             <p>
                 Gender<br>
-                <input type="radio" id="male" name="gender" value="male" checked>Male<br>
-                <input type="radio" id="female" name="gender" value="female">Female<br>
-                <input type="radio" id="other" name="gender" value="other">Other
+                <input v-model="selectedGender" type="radio" id="male" value="male" checked>Male<br>
+                <input v-model="selectedGender" type="radio" id="female" value="female">Female<br>
+                <input v-model="selectedGender" type="radio" id="other" value="other">Other
             </p>
             </form>
-            <button type="submit" id="submitbutton"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
+            <div id="myID">
+                {{fullname}}
+                {{email}}
+                {{street}}
+                {{apartment}}
+                {{recipient}}
+                {{selectedGender}}
+                {{confirmedBurgers}}
+                <button v-on:click="submit(fullname,email,street,apartment,recipient,selectedGender,selectedBurger)" type="submit" id="submitbutton"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
+            </div>
         </section>
         <footer>    
             &copy;This is a footer

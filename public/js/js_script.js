@@ -27,26 +27,26 @@
 // 	burgerList.appendChild(burgerItem);
 // }
 
-let myButton = document.getElementById('submitbutton');
+// let myButton = document.getElementById('submitbutton');
 
-myButton.onclick = function(){
-	console.log("Button clicked");
-	getFormData();
-}
+// myButton.onclick = function(){
+// 	console.log(getFormData());
+// }
 
-function getFormData(){
-		let fullname = document.getElementById('fullname').value;
-		let email = document.getElementById('email').value;
-		let street = document.getElementById('street').value;
-		let apartment = document.getElementById('apartment').value;
-		let dropDown = document.getElementById('recipient');
-		let recipient = dropDown.options[dropDown.selectedIndex].text;
-		let genders = document.getElementsByName('gender');
-		let selectedGender = "";
-		for(var gender of genders){
-			if(gender.checked){
-				selectedGender = gender.value;
-			}
-		}
-		console.log(fullname + email + street + apartment + recipient + selectedGender);
-;}
+// function getFormData(){
+// 		let fullname = document.getElementById('fullname').value;
+// 		let email = document.getElementById('email').value;
+// 		let street = document.getElementById('street').value;
+// 		let apartment = document.getElementById('apartment').value;
+// 		let dropDown = document.getElementById('recipient');
+// 		let recipient = dropDown.options[dropDown.selectedIndex].text;
+// 		let genders = document.getElementsByName('gender');
+// 		let selectedGender = "";
+// 		for(var gender of genders){
+// 			if(gender.checked){
+// 				selectedGender = gender.value;
+// 			}
+// 		}
+
+// 		return [fullname, email, street, apartment,recipient, selectedGender]
+// ;}
