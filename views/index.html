@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script src="https://vuejs.org/js/vue.js"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
         <script src="js/js_script.js" defer></script> 
         <script src="js/vue_script.js" defer></script> 
         <title>BurgerTown</title>
@@ -19,11 +20,11 @@
             <p>Choose what burger you want to eat</p>
             <div class="burgerlist" id="myID">
                 <div v-for="burger in menu">
-                    <img v-bind:src="burger.image">
+                    <img v-bind:src="burger.img">
                     {{ burger.name }}
                     <ul>
                         <li>
-                           {{ burger.kcal }} kcal
+                           {{ burger.kCal }} kcal
                         </li>
                         <li v-if="burger.gluten == 'no'">
                             Gluten Free
