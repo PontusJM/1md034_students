@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <script src="https://vuejs.org/js/vue.js"></script>
         <script type="text/javascript" src="js/menu.js"></script>
+        <script src="/socket.io/socket.io.js" defer></script>
         <script src="js/js_script.js" defer></script> 
         <script src="js/vue_script.js" defer></script> 
         <title>BurgerTown</title>
@@ -49,14 +50,13 @@
                 <label for="email">Email</label><br>
                 <input v-model="email" type="email" id="email" name="em" required="required" placeholder="your@email.com"> 
             </p>
-            <p>
-                <label for="street">Street</label><br>
-                <input v-model="street" type="text" id="street" name="st" required="required" placeholder="Your street name here"> 
-            </p>
-            <p>
-                <label for="apartment">Apartment</label><br>
-                <input v-model="apartment" type="number" min="0" id="apartment" name="ap" required="required"> 
-            </p>
+            <div class="view-box">
+                <div id="dots" v-on:click="addOrder">
+                    <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                    {{key}}
+                    </div>
+                </div>
+            </div>
             <p>
                 <label for="recipient">Recipient</label><br />
                 <select v-model="recipient" id="recipient" name="rcp">
@@ -74,7 +74,7 @@
             </p>
             </form>
             <div>
-                <button v-on:click="submit(fullname,email,street,apartment,recipient,selectedGender,selectedBurger)" type="submit" id="submitbutton"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
+                <button v-on:click="submit(fullname,email,recipient,selectedGender)" type="submit" id="submitbutton"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
             </div>
             <ul v-if="submitted">
                 <li>
@@ -82,12 +82,6 @@
                 </li>
                 <li>
                     {{email}}
-                </li>
-                <li>
-                    {{street}}
-                </li>
-                <li>
-                    {{apartment}}
                 </li>
                 <li>
                     {{recipient}}
