@@ -51,9 +51,9 @@
                 <input v-model="email" type="email" id="email" name="em" required="required" placeholder="your@email.com"> 
             </p>
             <div class="view-box">
-                <div id="dots" v-on:click="addOrder">
-                    <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-                    {{key}}
+                <div id="dots" v-on:click="displayOrder">
+                    <div v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                    T
                     </div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
             </p>
             </form>
             <div>
-                <button v-on:click="submit(fullname,email,recipient,selectedGender)" type="submit" id="submitbutton"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
+                <button v-on:click="submit()" type="submit" id="submitbutton"><img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1509/sarahdesign150900475/44516943-confirm-icon-check-mark-button.jpg" width="15"/> Send Info</button>
             </div>
             <ul v-if="submitted">
                 <li>
