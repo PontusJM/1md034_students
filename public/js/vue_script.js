@@ -55,6 +55,7 @@ const vm = new Vue({
           y: this.order.details.y
         },
         orderItems: this.confirmedBurgers,
+        personalInfo: { name: this.fullname, email: this.email, recipient: this.recipient, gender: this.selectedGender}
       });
 		},
 		displayOrder: function(event) {
